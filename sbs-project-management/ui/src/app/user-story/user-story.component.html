@@ -1,0 +1,95 @@
+<!-- eslint-disable prettier/prettier -->
+<!-- Latest compiled and minified CSS -->
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+/>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="titlebar">
+  <h1>New User Story</h1>
+</div>
+<div id="form-container">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <h3 style="text-align: center">New User Story</h3>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-8">
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="userStoryData.subject"
+          name="name"
+          placeholder="Subject"
+        />
+      </div>
+      <div class="form-group col-md-4">
+        <select
+          class="form-select"
+          [(ngModel)]="userStoryData.status"
+          name="status"
+        >
+          <option value="New" selected>New</option>
+          <option value="Ready">Ready</option>
+          <option value="In progress">In progress</option>
+          <option value="Ready for Test">Ready for Test</option>
+          <option value="Done">Done</option>
+          <option value="Archieved">Archieved</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-8">
+        <textarea
+          class="form-control"
+          rows="10"
+          [(ngModel)]="userStoryData.description"
+          name="description"
+          placeholder="User Story Description"
+        ></textarea>
+      </div>
+      <div class="form-group col-md-4">
+        <h4>Points:</h4>
+        <div class="form-row">
+          <label>UX:</label>
+          <input
+            type="number"
+            [(ngModel)]="uxPoints"
+            name="name"
+          />
+        </div>
+        <div class="form-row">
+          <label>Design:</label>
+          <input
+            type="number"
+            [(ngModel)]="designPoints"
+            name="name"
+          />
+        </div>
+        <div class="form-row">
+          <label>Front:</label>
+          <input
+            type="number"
+            [(ngModel)]="frontPoints"
+            name="name"
+          />
+        </div>
+        <div class="form-row">
+          <label>Back:</label>
+          <input
+            type="number"
+            [(ngModel)]="backPoints"
+            name="name"
+          />
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
+</div>
